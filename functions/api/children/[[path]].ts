@@ -4,6 +4,8 @@ export async function onRequestGet(context) {
   try {
     const [bucket, path] = parseBucketPath(context);
     const prefix = path && `${path}/`;
+    console.log("prefix", prefix);
+    console.log("bucket", bucket);
     if (!bucket || prefix.startsWith("_$flaredrive$/")) return notFound();
 
     const objList = await bucket.list({
