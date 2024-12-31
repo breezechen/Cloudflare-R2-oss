@@ -10,5 +10,8 @@ export function parseBucketPath(context): [any, string] {
   const path = decodeURIComponent(pathSegments.join("/"));
   const driveid = url.hostname.replace(/\..*/, "");
 
+  console.log("driveid", driveid);
+  console.log("path", path);
+
   return [env[driveid] || env["BUCKET"], path];
 }
