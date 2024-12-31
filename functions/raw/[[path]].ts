@@ -2,6 +2,8 @@ import { notFound, parseBucketPath } from "@/utils/bucket";
 
 export async function onRequestGet(context) {
   const [bucket, path] = parseBucketPath(context);
+  console.log("bucket", bucket);
+  console.log("path", path);
   if (!bucket) return notFound();
   const url = context.env["PUBURL"] + "/" + context.request.url.split("/raw/")[1]
 
