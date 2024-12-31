@@ -12,6 +12,7 @@ export function parseBucketPath(context): [any, string] {
 
   console.log("driveid", driveid);
   console.log("path", path);
+  console.log("env", env);
 
   return [env[driveid] || env["BUCKET"], path];
 }
